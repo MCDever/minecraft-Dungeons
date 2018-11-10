@@ -1,0 +1,64 @@
+{
+	"geometry.mob_redgolem": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 2,
+		"visible_bounds_height": 2,
+		"visible_bounds_offset": [0, 1, 0],
+		"bones": [
+			{
+				"name": "body",
+				"pivot": [0, 31, 0],
+				"cubes": [
+					{"origin": [-4, 23, -1], "size": [8, 8, 8], "uv": [0, 0]},
+					{"origin": [-9, 21, -7], "size": [18, 12, 11], "uv": [32, 0]},
+					{"origin": [-5, 25, -12], "size": [10, 7, 5], "uv": [62, 23]},
+					{"origin": [-6, 24, -13], "size": [12, 3, 6], "uv": [43, 0]},
+					{"origin": [-4.5, 16, -4], "size": [9, 5, 6], "uv": [90, 0], "inflate": 0.5}
+				]
+			},
+			{
+				"name": "head",
+				"pivot": [0, 31, -2]
+			},
+			{
+				"name": "arm0",
+				"pivot": [0, 31, 0],
+				"cubes": [
+					{"origin": [-13, 9.5, -5], "size": [4, 16, 4], "uv": [0, 23]},
+					{"origin": [-14, 22.5, -6], "size": [5, 10, 6], "uv": [16, 23]},
+					{"origin": [-14, 2.5, -6], "size": [6, 8, 6], "uv": [38, 23]}
+				]
+			},
+			{
+				"name": "arm1",
+				"pivot": [0, 31, 0],
+				"cubes": [
+					{"origin": [9, 22.5, -6], "size": [5, 10, 7], "uv": [0, 43]},
+					{"origin": [9, 9.5, -5], "size": [4, 15, 5], "uv": [26, 43]},
+					{"origin": [8, 2.5, -6], "size": [6, 8, 7], "uv": [46, 43]}
+				]
+			},
+			{
+				"name": "leg1",
+				"pivot": [5, 13, 0],
+				"mirror": true,
+				"cubes": [
+					{"origin": [-7.5, 0, -3], "size": [6, 16, 5], "uv": [0, 64]}
+				]
+			},
+			{
+				"name": "leg2",
+				"pivot": [5, 13, 0],
+				"mirror": true,
+				"cubes": [
+					{"origin": [1.5, 0, -3], "size": [6, 16, 5], "uv": [0, 85]}
+				]
+			},
+			{
+				"name": "bone",
+				"pivot": [0, 4, 0]
+			}
+		]
+	}
+}

@@ -1,0 +1,199 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "animations": {
+    "animation.humanoid.base_pose": {
+      "loop": true,
+      "bones": {
+        "waist": { "position": [ 0.0, 0.0, 0.0 ] }
+      }
+    },
+    "animation.humanoid.look_at_target.default": {
+      "loop": true,
+      "bones": {
+        "head": { "rotation": [ "Entity.Member.targetXRot", "Entity.Member.targetYRot", 0.0 ] }
+      }
+    },
+    "animation.humanoid.look_at_target.gliding": {
+      "loop": true,
+      "bones": {
+        "head": { "rotation": [ "-45.0", "Entity.Member.targetYRot", 0.0 ] }
+      }
+    },
+    "animation.humanoid.look_at_target.swimming": {
+      "loop": true,
+      "bones": {
+        "head": { "rotation": [ "Math.lerp(Entity.Member.targetXRot, -45.0, Entity.SwimAmount)", "Entity.Member.targetYRot", 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.move": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [ "Entity.tcos1", 0.0, 0.0 ] },
+        "leftArm": { "rotation": [ "Entity.tcos0", 0.0, 0.0 ] },
+        "rightLeg": { "rotation": [ "Entity.tcos0 * 1.4", 0.0, 0.0 ] },
+        "leftLeg": { "rotation": [ "Entity.tcos1 * 1.4", 0.0, 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.riding.arms": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [ -36.0, 0.0, 0.0 ] },
+        "leftArm": { "rotation": [ -36.0, 0.0, 0.0 ] }
+      }
+    },
+    "animation.humanoid.riding.legs": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "rightLeg": { "rotation": [ -72.0, 18.0, 0.0 ] },
+        "leftLeg": { "rotation": [ -72.0, -18.0, 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.holding": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [ "Entity.IsHoldingRight ? (this * 0.5 - 18.0) : 0.0", 0.0, 0.0 ] },
+        "leftArm": { "rotation": [ "Entity.IsHoldingLeft ? (this * 0.5 - 18.0) : 0.0", 0.0, 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.brandish_spear": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [ "this * -0.5 - 157.5 - 22.5 * Entity.ChargeAmount", "-this", 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.charging": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [ "22.5 * Entity.ChargeAmount - this", "-this", 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.attack.positions": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "rightArm": { "position": [ "-Entity.cosAttackBodyRotY * 5.0", 0.0, "Entity.sinAttackBodyRotY * 5.0" ] },
+        "leftArm": { "position": [ "-Entity.cosAttackBodyRotY * 5.0", 0.0, "Entity.sinAttackBodyRotY * 5.0" ] }
+      }
+    },
+    "animation.humanoid.attack.rotations": {
+      "loop": true,
+      "bones": {
+        "body": { "rotation": [ 0.0, "Entity.attackBodyRotY - this", 0.0 ] },
+        "rightArm": {
+          "rotation": [
+            "Math.sin(1.0 - Math.pow(1.0 - Entity.AttackTime, 3.0) * 180.0) * (Entity.IsSpear ? -1.0 : 1.0 )",
+            "Entity.IsSpear ? 0.0 : Entity.attackBodyRotY * 2.0",
+            0.0
+          ]
+        },
+        "leftArm": { "rotation": [ "Entity.attackBodyRotY", 0.0, 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.sneaking": {
+      "loop": true,
+      "bones": {
+        "body": { "rotation": [ "0.5 - this", 0.0, 0.0 ] },
+        "rightArm": { "rotation": [ 72.0, 0.0, 0.0 ] },
+        "leftArm": { "rotation": [ 72.0, 0.0, 0.0 ] },
+        "rightLeg": { "position": [ 0.0, -3.0, 4.0 ] },
+        "leftLeg": { "position": [ 0.0, -3.0, 4.0 ] },
+        "head": { "position": [ 0.0, 1.0, 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.bob": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [ 0.0, 0.0, "(Math.cos(Params.LifeTime * 103.2) * 2.865) + 2.865" ] },
+        "leftArm": { "rotation": [ 0.0, 0.0, "(Math.cos(Params.LifeTime * 103.2) * 2.865) + 2.865" ] },
+        "leftLeg": { "rotation": [ "-Math.sin(Params.LifeTime * 76.8) * 2.865", 0.0, 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.damage_nearby_mobs": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "rightArm": { "rotation": [ 45.0, 0.0, 0.0 ] },
+        "leftArm": { "rotation": [ -45.0, 0.0, 0.0 ] },
+        "rightLeg": { "rotation": [ -45.0, 0.0, 0.0 ] },
+        "leftLeg": { "rotation": [ 45.0, 0.0, 0.0 ] }
+      }
+    },
+
+    "animation.humanoid.bow_and_arrow": {
+      "loop": true,
+      "bones": {
+        "rightArm": { "rotation": [ "Entity.Member.targetXRot - 90.0 + Math.sin(Params.LifeTime * 76.8) * 2.865 - this", "Entity.Member.targetYRot - 5.73", "(Math.cos(Params.LifeTime * 103.2) * 2.865) + 2.865" ] },
+        "leftArm": { "rotation": [ "Entity.Member.targetXRot - 90.0 - Math.sin(Params.LifeTime * 76.8) * 2.865 - this", "Entity.Member.targetYRot + 28.65", "-(Math.cos(Params.LifeTime * 103.2) * 2.865) - 2.865" ] }
+      }
+    },
+
+    "animation.humanoid.swimming": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": {
+            "0.7": {
+              "pre": [ "Math.lerp(this, 0.0, Entity.RightArmSwimAmount)", "Math.lerp(this, 180.0, Entity.RightArmSwimAmount)", "Math.lerp(this, -0.1019 * (-65.0 * Entity.internalSwimPos + Entity.internalSwimPos * Entity.internalSwimPos), Entity.RightArmSwimAmount)" ],
+              "post": [ "Math.lerp(this, 11.25 * Entity.internalSwimPos, Entity.RightArmSwimAmount)", "Math.lerp(this, 180.0, Entity.RightArmSwimAmount)", "Math.lerp(this, 72.77 + 13.4 * Entity.internalSwimPos, Entity.RightArmSwimAmount)" ]
+            },
+            "1.1": [ "Math.lerp(this, 11.25 * Entity.internalSwimPos, Entity.RightArmSwimAmount)", "Math.lerp(this, 180.0, Entity.RightArmSwimAmount)", "Math.lerp(this, 72.77 + 13.4 * Entity.internalSwimPos, Entity.RightArmSwimAmount)" ],
+            "1.3": {
+              "pre": [ "Math.lerp(this, 11.25 * Entity.internalSwimPos, Entity.RightArmSwimAmount)", "Math.lerp(this, 180.0, Entity.RightArmSwimAmount)", "Math.lerp(this, 72.77 + 13.4 * Entity.internalSwimPos, Entity.RightArmSwimAmount)" ],
+              "post": [ "Math.lerp(this, 90.0 - (22.5 * Entity.internalSwimPos), Entity.RightArmSwimAmount)", "Math.lerp(this, 180.0, Entity.RightArmSwimAmount)", "Math.lerp(this, 180.0, Entity.RightArmSwimAmount)" ]
+            }
+          }
+        },
+        "leftArm": {
+          "rotation": {
+            "0.7": {
+              "pre": [ "Math.lerp(this, 0.0, Entity.LeftArmSwimAmount)", "Math.lerp(this, 180.0, Entity.LeftArmSwimAmount)", "Math.lerp(this, 180.0 - 0.01877 * (-65.0 * Entity.internalSwimPos + Entity.internalSwimPos * Entity.internalSwimPos), Entity.LeftArmSwimAmount)" ],
+              "post": [ "Math.lerp(this, 11.25 * Entity.internalSwimPos, Entity.LeftArmSwimAmount)", "Math.lerp(this, 180.0, Entity.LeftArmSwimAmount)", "Math.lerp(this, 72.77 + 13.4 * Entity.internalSwimPos, Entity.LeftArmSwimAmount)" ]
+            },
+            "1.1": [ "Math.lerp(this, 11.25 * Entity.internalSwimPos, Entity.LeftArmSwimAmount)", "Math.lerp(this, 180.0, Entity.LeftArmSwimAmount)", "Math.lerp(this, 72.77 + 13.4 * Entity.internalSwimPos, Entity.LeftArmSwimAmount)" ],
+            "1.3": {
+              "pre": [ "Math.lerp(this, 11.25 * Entity.internalSwimPos, Entity.LeftArmSwimAmount)", "Math.lerp(this, 180.0, Entity.LeftArmSwimAmount)", "Math.lerp(this, 72.77 + 13.4 * Entity.internalSwimPos, Entity.LeftArmSwimAmount)" ],
+              "post": [ "Math.lerp(this, 90.0 - (22.5 * Entity.internalSwimPos), Entity.LeftArmSwimAmount)", "Math.lerp(this, 180.0, Entity.LeftArmSwimAmount)", "Math.lerp(this, 180.0, Entity.LeftArmSwimAmount)" ]
+            }
+          }
+        },
+        "rightLeg": {
+          "rotation": [ "Math.lerp(this, Math.cos(Params.AnimPos * 19.5) * 17.2, Entity.LeftArmSwimAmount)", 0.0, 0.0 ]
+        },
+        "leftLeg": {
+          "rotation": [ "Math.lerp(this, Math.cos(Params.AnimPos * 19.5 + 180.0) * 17.2, Entity.LeftArmSwimAmount)", 0.0, 0.0 ]
+        }
+      }
+    },
+
+    "animation.humanoid.use_item_progress": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [ "Entity.UseItemStartupProgress * -60.0 + Entity.UseItemIntervalProgress * 11.25", "Entity.UseItemStartupProgress * -22.5 + Entity.UseItemIntervalProgress * 11.25", "Entity.UseItemStartupProgress * -5.625 + Entity.UseItemIntervalProgress * 11.25" ]
+        }
+      }
+    },
+
+    "animation.skeleton.attack": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [ "-68.75 * Entity.attack2 + 22.92 * Entity.attack", "-5.73 + Entity.attack2 * 34.38 - this", "-this" ]
+        },
+        "leftArm": {
+          "rotation": [ "-68.75 * Entity.attack2 + 22.92 * Entity.attack", "5.73 - Entity.attack2 * 34.38 - this", "-this" ]
+        }
+      }
+    }
+  }
+}

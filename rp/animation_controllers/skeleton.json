@@ -1,0 +1,184 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "animation_controllers": {
+    "controller.animation.humanoid.base_pose": {
+      "states": {
+        "default": {
+          "animations": { "humanoid_base_pose": {} }
+        }
+      }
+    },
+    "controller.animation.humanoid.look_at_target": {
+      "states": {
+        "default": {
+          "animations": {
+            "look_at_target_default": {}
+          },
+          "transitions": [
+            { "gliding": "Entity.Flags.GLIDING" },
+            { "swimming": "Entity.Flags.SWIMMING" }
+          ]
+        },
+        "gliding": {
+          "animations": {
+            "look_at_target_gliding": {}
+          },
+          "transitions": [
+            { "swimming": "Entity.Flags.SWIMMING" },
+            { "default": "!Entity.Flags.GLIDING" }
+          ]
+        },
+        "swimming": {
+          "animations": {
+            "look_at_target_swimming": {}
+          },
+          "transitions": [
+            { "gliding": "Entity.Flags.GLIDING" },
+            { "default": "!Entity.Flags.SWIMMING" }
+          ]
+        }
+      }
+    },
+    "controller.animation.humanoid.move": {
+      "states": {
+        "default": {
+          "animations": { "move": {} }
+        }
+      }
+    },
+    "controller.animation.humanoid.riding": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "riding": "Entity.IsRiding" }
+          ]
+        },
+        "riding": {
+          "animations": {
+            "riding.arms": {},
+            "riding.legs": {}
+          },
+          "transitions": [
+            { "default": "!Entity.IsRiding" }
+          ]
+        }
+      }
+    },
+    "controller.animation.humanoid.holding": {
+      "states": {
+        "default": {
+          "animations": { "holding": {} }
+        }
+      }
+    },
+    "controller.animation.humanoid.brandish_spear": {
+      "states": {
+        "default": {
+          "transitions": [ { "brandish_spear": "Entity.IsBrandishingSpear" } ]
+        },
+        "brandish_spear": {
+          "animations": { "brandish_spear": {} },
+          "transitions": [ { "default": "!Entity.IsBrandishingSpear" } ]
+        }
+      }
+    },
+    "controller.animation.humanoid.charging": {
+      "states": {
+        "default": {
+          "transitions": [ { "charging": "Entity.IsCharging" } ]
+        },
+        "charging": {
+          "animations": { "charging": {} },
+          "transitions": [ { "default": "!Entity.IsCharging" } ]
+        }
+      }
+    },
+    "controller.animation.humanoid.attack": {
+      "states": {
+        "default": {
+          "transitions": [
+            { "attacking": "Entity.AttackTime > 0.0" }
+          ]
+        },
+        "attacking": {
+          "animations": {
+            "attack.positions": {},
+            "attack.rotations": {}
+          },
+          "transitions": [
+            { "default": "Entity.AttackTime <= 0.0" }
+          ]
+        }
+      }
+    },
+    "controller.animation.humanoid.sneaking": {
+      "states": {
+        "default": {
+          "transitions": [ { "sneaking": "Entity.IsSneaking" } ]
+        },
+        "sneaking": {
+          "animations": { "sneaking": {} },
+          "transitions": [ { "default": "!Entity.IsSneaking" } ]
+        }
+      }
+    },
+    "controller.animation.humanoid.bob": {
+      "states": {
+        "default": {
+          "animations": { "bob": {} }
+        }
+      }
+    },
+    "controller.animation.humanoid.damage_nearby_mobs": {
+      "states": {
+        "default": {
+          "transitions": [ { "damage_nearby_mobs": "Entity.DamageNearbyMobs" } ]
+        },
+        "damage_nearby_mobs": {
+          "animations": { "damage_nearby_mobs": {} },
+          "transitions": [ { "default": "!Entity.DamageNearbyMobs" } ]
+        }
+      }
+    },
+    "controller.animation.humanoid.bow_and_arrow": {
+      "states": {
+        "default": {
+          "transitions": [ { "bow_and_arrow": "Entity.IsBowAndArrow" } ]
+        },
+        "bow_and_arrow": {
+          "animations": { "bow_and_arrow": {} },
+          "transitions": [ { "default": "!Entity.IsBowAndArrow" } ]
+        }
+      }
+    },
+    "controller.animation.humanoid.swimming": {
+      "states": {
+        "default": {
+          "transitions": [ { "swimming": "Entity.SwimAmount > 0.0" } ]
+        },
+        "swimming": {
+          "animations": { "swimming": {} },
+          "transitions": [ { "default": "Entity.SwimAmount <= 0.0" } ]
+        }
+      }
+    },
+    "controller.animation.humanoid.use_item_progress": {
+      "states": {
+        "default": {
+          "transitions": [ { "use_item_progress": "( Entity.UseItemIntervalProgress > 0.0 ) || ( Entity.UseItemStartupProgress > 0.0 )" } ]
+        },
+        "use_item_progress": {
+          "animations": { "use_item_progress": {} },
+          "transitions": [ { "default": "( Entity.UseItemIntervalProgress <= 0.0 ) && ( Entity.UseItemStartupProgress <= 0.0 )" } ]
+        }
+      }
+    },
+    "controller.animation.skeleton.attack": {
+      "states": {
+        "attack": {
+          "animations": { "skeleton_attack": {} }
+        }
+      }
+    }
+  }
+}

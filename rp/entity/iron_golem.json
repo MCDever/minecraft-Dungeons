@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:red_golem",
+      "textures": {
+        "default": "textures/entity/red_golem"
+      },
+      "geometry": {
+        "default": "geometry.mob_redgolem"
+      }
+    }
+  }
+}
