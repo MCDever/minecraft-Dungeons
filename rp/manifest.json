@@ -1,0 +1,39 @@
+{
+	"format_version": 1,
+	"header": {
+		"description": "...",
+		"name": "MysticCraft",
+		"uuid": "27b66c12-cef7-4f1f-921e-099e18233b17",
+		"version": [
+			1,
+			8,
+			0
+		],
+		"min_engine_version": [
+			1,
+			8,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "c796390a-17ae-4421-9940-7a86110e4648",
+			"version": [
+				1,
+				8,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "fc38a04c-02ff-4f9a-962f-cff76c7c2360",
+			"version": [
+				1,
+				8,
+				0
+			]
+		}
+	]
+}
