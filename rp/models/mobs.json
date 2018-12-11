@@ -2196,6 +2196,9 @@
 	"geometry.skeleton:geometry.zombie": {
 		"texturewidth": 128,
 		"textureheight": 128,
+		"visible_bounds_width": 2,
+		"visible_bounds_height": 2,
+		"visible_bounds_offset": [0, 1, 0],
 		"bones": [
 			{
 				"name": "body",
